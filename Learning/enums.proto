@@ -1,0 +1,23 @@
+syntax = proto3;
+
+/* Person is used to recognize
+a person in out system
+*/
+
+message Person{
+    int32 age = 1;
+    string fname = 2;
+    string lname = 3;
+    bytes smallPicture = 4; //represents a small .jpg file
+    bool isVerified = 5;
+    float height = 6; //heigt in cms
+
+    repeated string phone_numbers = 7; //add as may phone numbers as required of type string
+
+    enum eyeColor {
+        UNKNOWN_EYE_COLOR = 0;
+        EYE_GREEN = 1;
+        EYE_BROWN = 2;
+        EYE_BLUE = 3
+    }
+}
