@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+
+message City{
+    string name = 1;
+    string ZIP_Code = 2;
+    string country_name = 3;
+}
+
+message Street{
+    string name = 1;
+    City city_name = 2;
+}
+
+message Building{
+    string name = 1;
+    int32 number = 2;
+    Street stree_name = 3;
+}

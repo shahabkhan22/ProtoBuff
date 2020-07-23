@@ -1,4 +1,4 @@
-syntax = proto3;
+syntax = "proto3";
 
 /* Person is used to recognize
 a person in out system
@@ -18,6 +18,25 @@ message Person{
         UNKNOWN_EYE_COLOR = 0;
         EYE_GREEN = 1;
         EYE_BROWN = 2;
-        EYE_BLUE = 3
+        EYE_BLUE = 3;
     }
+
+    eyeColor eye_color = 8;
+    Date birthday = 9;
+    //define address in person
+    message Address {
+        string address_line_1 = 1;
+        string address_line_2 = 2;
+        string ZIP_Code = 3;
+        string city = 4;
+        string country = 5;
+    }
+
+    repeated Address addresses = 10;
+}
+ 
+message Date{
+    int32 year = 1;
+    int32 month = 2;
+    int32 day = 3;
 }
